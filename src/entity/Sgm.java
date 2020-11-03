@@ -20,4 +20,13 @@ public class Sgm {
     public String toGraph() {
         return name + (value.startsWith("@") ? "": ":"+value);
     }
+
+    public int getSon(){
+
+        if(value.startsWith("@")){
+            return new Integer(value.substring(1));
+        }else{
+            return -1;
+        }
+    }
 }

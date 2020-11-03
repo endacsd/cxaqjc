@@ -1,0 +1,32 @@
+digraph G{
+fontsize=20
+ranksep =1
+nodesep =0.25
+ordering=out;
+compound=true
+"0" -> "2701 function_decl"
+@2701 function_decl name:@2708 type:@2709 srcp:main.c:1 link:extern body:@2710
+@2710 bind_expr type:@107 vars:@2716 body:@2717
+"2701 function_decl" -> "2710 bind_expr"
+"2710 bind_expr" -> "2717 statement_list"
+"2717 statement_list" -> "2726 decl_expr"
+"2726 decl_expr" -> "2727 decl_expr"
+"2727 decl_expr" -> "2728 goto_expr"
+"2728 goto_expr" -> "2732 label_expr"
+"2729 label_expr" -> "2730 cond_expr"
+"2730 cond_expr" -> "2744 eq_expr"
+"2744 eq_expr" -> "34"
+"34" -> "2745 postincrement_expr"
+"2745 postincrement_expr" -> "35"
+"35" -> "2731 postincrement_expr"
+"2731 postincrement_expr" -> "2732 label_expr"
+"2732 label_expr" -> "2733 cond_expr"
+"2733 cond_expr" -> "2747 le_expr"
+"2747 le_expr" -> "36"
+"36" -> "2748 goto_expr"
+"2748 goto_expr" -> "2729 label_expr"
+"36" -> "2749 goto_expr"
+"2749 goto_expr" -> "2734 label_expr"
+"2734 label_expr" -> "2735 return_expr"
+}
+

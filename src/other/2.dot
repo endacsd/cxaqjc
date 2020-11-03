@@ -1,0 +1,79 @@
+digraph G{
+compound=true
+	compound=true
+	fontsize=20
+	margin="0,0"
+	ranksep =1
+	nodesep =0.25
+    ordering=out;
+    node [shape =record, charset = "UTF-8" fontname = "Microsoft Yahei", fontsize = 14] 
+2701[label="2701|function_decl|<name>name|<type>type|<srcp:main.c:1>srcp:main.c:1|<body>body"]
+2708[label="2708|identifier_node|<strg:main>strg:main|<lngt:4>lngt:4"]
+2710[label="2710|bind_expr|<type>type|<body>body"]
+2716[label="2716|var_decl|<name>name|<type>type|<srcp:main.c:2>srcp:main.c:2|<size>size"]
+2717[label="2717|statement_list|<0>0|<1>1|<2>2|<3>3|<4>4|<5>5|<6>6|<7>7|<8>8|<9>9"]
+2723[label="2723|identifier_node|<strg:a>strg:a|<lngt:1>lngt:1"]
+2724[label="2724|var_decl|<name>name|<type>type|<srcp:main.c:3>srcp:main.c:3|<size>size"]
+2726[label="2726|decl_expr|<type>type"]
+2727[label="2727|decl_expr|<type>type"]
+2728[label="2728|goto_expr|<type>type|<labl>labl"]
+2729[label="2729|label_expr|<type>type|<name>name"]
+2730[label="2730|cond_expr|<type>type|<op 0>op 0|<op 1>op 1"]
+2731[label="2731|postincrement_expr|<type>type|<op 0>op 0|<op 1>op 1"]
+2732[label="2732|label_expr|<type>type|<name>name"]
+2733[label="2733|cond_expr|<type>type|<op 0>op 0|<op 1>op 1|<op 2>op 2"]
+2734[label="2734|label_expr|<type>type|<name>name"]
+2735[label="2735|return_expr|<type>type"]
+2741[label="2741|identifier_node|<strg:count>strg:count|<lngt:5>lngt:5"]
+2742[label="2742|label_decl|<type>type"]
+2743[label="2743|label_decl|<type>type"]
+2744[label="2744|eq_expr|<type>type|<op 0>op 0|<op 1>op 1"]
+2745[label="2745|postincrement_expr|<type>type|<op 0>op 0|<op 1>op 1"]
+2746[label="2746|integer_cst|<type>type|<low:1>low:1"]
+2747[label="2747|le_expr|<type>type|<op 0>op 0|<op 1>op 1"]
+2748[label="2748|goto_expr|<type>type|<labl>labl"]
+2749[label="2749|goto_expr|<type>type|<labl>labl"]
+2750[label="2750|label_decl|<type>type"]
+2757[label="2757|bit_and_expr|<type>type|<op 0>op 0|<op 1>op 1"]
+2758[label="2758|integer_cst|<type>type|<low:50>low:50"]
+2766[label="2766|nop_expr|<type>type|<op 0>op 0"]
+2767[label="2767|integer_cst|<type>type|<low:1>low:1"]
+27[label="27|integer_cst|<type>type|<low:0>low:0"]
+5[label="5|integer_cst|<type>type|<low:32>low:32"]
+2701:"name" -> 2708
+2701:"body" -> 2710
+2710:"body" -> 2717
+2717:"0" -> 2726
+2717:"1" -> 2727
+2717:"2" -> 2728
+2717:"3" -> 2729
+2729:"name" -> 2743
+2717:"4" -> 2730
+2730:"op 0" -> 2744
+2744:"op 0" -> 2757
+2757:"op 0" -> 2766
+2766:"op 0" -> 2716
+2716:"name" -> 2723
+2716:"size" -> 5
+2757:"op 1" -> 2767
+2744:"op 1" -> 27
+2730:"op 1" -> 2745
+2745:"op 0" -> 2724
+2724:"name" -> 2741
+2724:"size" -> 5
+2745:"op 1" -> 2746
+2717:"5" -> 2731
+2731:"op 0" -> 2716
+2731:"op 1" -> 2746
+2717:"6" -> 2732
+2732:"name" -> 2742
+2717:"7" -> 2733
+2733:"op 0" -> 2747
+2747:"op 0" -> 2716
+2747:"op 1" -> 2758
+2733:"op 1" -> 2748
+2733:"op 2" -> 2749
+2717:"8" -> 2734
+2734:"name" -> 2750
+2717:"9" -> 2735
+}

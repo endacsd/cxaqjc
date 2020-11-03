@@ -34,6 +34,9 @@ public class Node {
         }
         return string;
     }
+    public String toTest(){
+        return "\""  + id + " "+ name + "\"";
+    }
     public String toGraphNode(){
 
 

@@ -1,5 +1,6 @@
 import entity.*;
 import io.ReadCode;
+import io.Step1;
 
 import java.util.*;
 
@@ -38,7 +39,7 @@ public class Main {
         }
         Tree tree = new Tree(arr);
 
-        //System.out.println(tree.root.get(0));
+
 
         List<Edge> edges = new ArrayList<>();
         Set<String> S = new TreeSet<>();
@@ -54,18 +55,12 @@ public class Main {
 
         //OUT1
 
-        {
-
-            for(String str : S){
-                System.out.println(str);
-            }
-            for (Edge edge : edges) {
-                System.out.println(edge);
-            }
-
+        if(false){
+            System.out.println(Step1.printGraph(S,edges));
+            return;
         }
 
-        if(true) return;
+
         //System.out.println(all+" " +(tvis.length-1));
 
         //
@@ -82,22 +77,19 @@ public class Main {
             }
         }
 
-        boolean k=false;
+        boolean k=true;
 
         if(k){
-            Graph G=new Graph(all,all*10);
-            for(Edge e : edges){
-                if(k)System.out.println(e);
-                G.addEdge(e);
+            Graph G=new Graph(all,all*10,tree);
+
+            for(Edge edge :edges){
+                G.addEdge(arr[edge.u],arr[edge.v]);
             }
-            G.solve1();
-            G.display1();
+            G.before();
+            G.DFS1(0,1,1);
         }
 
-        List<Edge> edges1=Graph.change(tree);
-        for(Edge e : edges1){
-            System.out.println(e);
-        }
+
 
 
 

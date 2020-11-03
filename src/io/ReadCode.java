@@ -34,7 +34,8 @@ public class ReadCode {
     private static final boolean debug=false;
 
 
-    static final String filename="src/io/main.c.001t.tu";
+    //static final String filename="src/io/main.c.001t.tu";
+    static final String filename="src/main/99/main.c.001t.tu";
     public static List<Node> read() throws Exception{
 
 

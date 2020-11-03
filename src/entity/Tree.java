@@ -77,7 +77,7 @@ public class Tree {
             if(checkAt(sgm.value)){
                 //System.out.println(sgm.value+" "+checkAt(sgm.value));
                 Node v=getSon(sgm.value);
-                //if(v==null) System.out.println("@fuck "+u+"@sgm: " +sgm);
+                //if(v==null) System.out.println("@DEB "+u+"@sgm: " +sgm);
                 if(v!=null&&Mast.contains(sgm.name)||u.name.equals("statement_list")){
                     //System.out.println(u.toGraphNode());
                     //System.out.println(v.toGraphNode());

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<script>
+    var ws = new WebSocket("ws://127.0.0.1:8080/group");
+    ws.onopen = function() {
+        var msg =  "{ \"from\" : \" B \" , \"text\" : \"hello from B\" }"
+        ws.send(msg);
+    };
+    ws.onmessage = function (e) {
+        console.log(e.data)
+    };
+    ws.onclose = function() {
+        console.log("closed...");
+    };
+    ws.onerror = function () {
+        console.log(this.readyState);
+    }
+</script>
+<body>
+
+
+
+
+</body>
+</html>

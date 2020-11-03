@@ -337,102 +337,29 @@ cond_expr_1 -> cond_expr_2
 
 
 
-先处理label的问题
-
-goto跳转到的是
-
-```md
-@4711   goto_expr        type: @151     labl: @4734 
-@4715   label_expr       type: @151     name: @4734   
-@4734   label_decl       type: @151     scpe: @4671    note: artificial 
-```
 
 
 
-需要转换一下     然 labl -> label_expr
-
-最简单的就是 单独处理一下 4715 使得 4734 到 4715 有一条边，之后再化简一下
 
 
 
-```java
-void DFS(int u,int f){
-    // part
-    if( u is cond){
-        //
-        //       -> op 1
-        // op 0
-        //       -> op 2
-        DFS(op_0,u) -> DFS(op_1,u)-> DFS(next);
-        DFS(op_0,u) -> DFS(op_2,u)-> DFS(next);
-        
-        
-        
-    }else if(u is list){
-        
-        // list -> 1 -> 2 -> 3 ->4 ->5
-    	
-    	
-    }else if( u is goto_expr ){
-        // label
-        DFS(next_expr,u);
-        
-    }else{
-        
-    }
-}
-```
 
 
 
-优化之后
+
+进入 cond 块+1
+
+cond_1 cond_2 
+
+cond_1 所有结束指向cond_2 又cond_2 指回下一个，
 
 
 
-```java
-
-void DFS(int f,int u,int end){
-    // 到 end 结束 
-    // 只遍历 body，
-    #f -> u
-    if( u is function_decl){
-        // body
-        DFS(u,cur_body,end);
-    }else if( u is statment_list){
-        
-         // 1->2->3->4->5->6
-        // 获得 list 列表
-        #f->head
-        for(auto v : u.son){
-            DFS(v.before,v,v.next);// 最后一个是end
-        }
-        
-    }else if(u is cond_expr){
-        //       -> op 1
-        // op 0
-        //       -> op 2
-        DFS(op_0,newEnd);
-        DFS(newEnd,op_1,end)
-        DFS(newEnd,op_2,end);
-    }else if(u is goto_expr){
-        // goto -> label
-
-        DFS(u,gotoLabel,end);
-    }else if(u is label_expr){
-        //
-        
-    }else{
-        //
-    }
-    
-}
-
-// 一开始 为  虚拟终止节点
-//
-
-```
+这个可以满足嵌套
 
 
+
+DFS(u,bel)
 
 
 

@@ -21,4 +21,10 @@ public class Edge {
     public String toString() {
         return u + ":"+ msg +" -> " + v;
     }
+
+    public String toGraphString(Node [] node) {
+        return "\""+u+node[u].name+"\"" +
+                " ->"+
+               "\""+v+node[v].name+"\"";
+    }
 }
